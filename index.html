@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="spiral.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btnGo").click(function(){
+					makeSpiral($("#userNum").val());
+				});
+
+				$("#userNum").keyup(function(event){
+				    if(event.keyCode == 13){ //enter
+				        $("#btnGo").click();
+				    }
+				});
+			})
+		</script>
+		<title>Phil's Spiral of DOOM! ... OK, numbers.</title>
+	</head>
+	<body style="text-align:center">
+		<div>
+			<p>Input a number, and I will make a neat spiral that goes up to it!</p>
+			<p>
+				<input type="text" id="userNum"/> <input type="button" id="btnGo" value="Go!"/>
+			</p>
+		</div>
+		<div>
+			<center> <!--if this isn't here, the table ends up left-aligned-->
+				<table id="output">
+				</table>
+			</center>
+		</div>
+
+	</body>
+</html>
